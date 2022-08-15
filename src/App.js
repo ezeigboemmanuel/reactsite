@@ -1,20 +1,16 @@
 import React from "react";
+import Navbar from "./components/Navbar.js";
+import Main from "./components/Main.js";
+import Data from "./components/Data.js";
 
-class Header extends React.Component {
-  render() {
-    return (
-      <nav>
-        <img src = "my-app/src/logo.svg" />
-      </nav>
-    )
-  }
-}
 
 class App extends React.Component {
   render() {
+    const data = Data.map(datum => <Main item = {datum} />)
     return (
       <div>
-        <Header />
+        <Navbar />
+        {data}
       </div>
     )
   }
